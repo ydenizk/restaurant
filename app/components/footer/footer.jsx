@@ -5,7 +5,7 @@ import Link from "next/link";
 
 function Footer() {
   return (
-    <div className="w-screen h-80  text-stone-200  p-0">
+    <div className="w-screen h-80  text-stone-200 p-0">
       <div className="h-64  bg-blackk grid grid-cols-3 gap-x-8 px-16 items-center justify-center">
         <div>
           <h1 className="uppercase text-xl font-bold tracking-wide mb-3 text-slate-100">CONTACT US</h1>

@@ -8,16 +8,19 @@ module.exports = {
   theme: {
     extend: {
       flex: {
-        '2': '2 2 0%'
+        '2': '2 2 0%',
+        '3': '3 3 0%',
+        
       },
       backgroundImage:{
         'banner': 'url("/banner.jpg")',
         'reservv': 'url("/reserv-1.jpg")',
+        'menu-banner': 'url("/menu-banner.jpg")',
        
       },
       colors:{
         bannercolor:'#9A3B3B',
-        blackk:"rgb(30,30,30)"
+        blackk:"rgb(26,26,33)"
       
       }
       
