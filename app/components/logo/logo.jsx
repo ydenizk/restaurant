@@ -16,25 +16,27 @@ function Logo() {
       />
       <div className="w-full flex justify-center itemms-around  ">
         <Link href="https://twitter.com/home" className="ml-2 px-2 ">
-          <ImTwitter className="text-slate-100 transition hover:bg-slate-300 text-2xl " />
+          <ImTwitter className="text-slate-100 transition hover:text-slate-300 text-2xl " />
         </Link>
         <Link href="https://www.facebook.com" className="ml-2 px-2">
-          <ImFacebook className="text-slate-100 transition hover:bg-slate-300  text-2xl " />
+          <ImFacebook className="text-slate-100 transition hover:text-slate-300  text-2xl " />
         </Link>
         <Link href="https://instagram.com/" className="ml-2 px-2">
-          <FaInstagramSquare className="text-slate-100 transition hover:bg-slate-300  text-2xl " />
+          <FaInstagramSquare className="text-slate-100 transition hover:text-slate-300  text-2xl " />
         </Link>
       </div>
       <div className="flex flex-col my-8">
         <Link
           href="/menu"
-          className=" whitespace-nowrap p-3 border-2 border-slate-200 text-slate-100 text-center w-3/4 mx-auto mb-4 hover:bg-red-900 transition "
+          className=" whitespace-nowrap p-3 border-2 border-slate-200 text-slate-100 text-center w-3/4 
+          mx-auto mb-4 hover:bg-orange-900 transition "
         >
           Order Online
         </Link>
         <Link
           href="/login"
-          className=" p-3 border-2 border-slate-200 text-slate-100 text-center w-3/4 mx-auto  hover:bg-red-900 transition "
+          className=" p-3 border-2 border-slate-200 text-slate-100 text-center w-3/4 mx-auto 
+           hover: hover:bg-orange-900  transition "
         >
           Login
         </Link>

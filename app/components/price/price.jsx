@@ -16,14 +16,14 @@ function Price({ options, price, id }) {
   return (
     <div className="mb-1">
       <h1 className="tracking-wide  font-semibold py-2 text-2xl">
-        ${total.toFixed(2)} €{" "}
+        ${total.toFixed(2)} €
       </h1>
 
       <div className="w-full flex items-center justify-start my-2 mb-6">
         {options.map((opt, index) => {
           return (
             <button
-              key={options.title}
+              key={opt.title}
               className="w-28 p-2 tracking-wide text-xl  mr-4 border border-slate-200 "
               style={{
                 background:
@@ -56,7 +56,7 @@ function Price({ options, price, id }) {
           {qty}
         </h2>
         <button
-          className=" text-xl font-semibold border border-text-slate-200 
+          className=" text-xl font-semibold border 
         border-l-0  px-2 transition hover:bg-slate-200 hover:text-blackk duration-300 "
           onClick={() => setQty((n) => (n < 5 ? n + 1 : 5))}
         >

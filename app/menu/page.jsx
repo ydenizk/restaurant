@@ -3,6 +3,7 @@ import SubMenu from "../components/submenu/submenu";
 import { MdLocalPhone } from "react-icons/md";
 
 
+
 function MenuPage() {
   return (
     <div className="p-0  w-full ">
@@ -16,7 +17,7 @@ function MenuPage() {
         </div>
       </div>
       <SubMenu />
-     
+
     </div>
   );
 }

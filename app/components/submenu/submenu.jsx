@@ -1,6 +1,5 @@
 import React from "react";
 import { food } from "@/app/main-data";
-
 import Image from "next/image";
 import { PiShoppingCartSimpleThin } from "react-icons/pi";
 import Link from "next/link";
@@ -16,8 +15,8 @@ function SubMenu() {
               <>
                 <button
                   key={f.id}
-                  className="border-0 text-slate-300 transition hover:text-slate-400 tracking-wide 
-                   capitalize font-extralight  "
+                  className="border-0 text-slate-200 transition hover:text-slate-400 tracking-wide 
+                   capitalize font-light  "
                 >
                   {f.tit}
                 </button>
@@ -51,6 +50,7 @@ function SubMenu() {
                           width={540}
                           height={308}
                           alt=""
+                          loading="lazy"
                           className="object-cover rounded-md"
                         />
                         <div className="flex  items-center p-4 mt-2">
@@ -60,16 +60,17 @@ function SubMenu() {
                               className="font-extralight text-xs text-slate-400
 "
                             >
-                              {" "}
-                              {desc}{" "}
+                              {desc}
                             </p>
                           </div>
 
                           <div className="flex flex-1 w-full  justify-end items-center ">
                             <h3> {price} € </h3>
-                            <Link href={`/menu/${id}`} className="ml-4 w-4 h-4 text-blackk bg-slate-400 opacity-80 text-center leading-4 rounded-sm">
-                              {" "}
-                              +{" "}
+                            <Link
+                              href={`/menu/${id}`}
+                              className="ml-4 w-4 h-4 text-blackk bg-slate-400 transition hover:bg-slate-300 opacity-80 text-center leading-4 rounded-sm"
+                            >
+                              +
                             </Link>
                           </div>
                         </div>
@@ -82,18 +83,19 @@ function SubMenu() {
           })}
         </div>
 
-        <div className=" col-span-1 flex-1 p-4 bg-blackk text-center h-full sticky right-0 top-0 w-full ">
-          <div className="flex items-center mt-[15%] justify-center mb-[20%]">
+        <div className="  flex-1  bg-blackk text-center h-screen sticky right-0 top-0 ">
+          <div className="flex items-center mt-[30%] justify-center mb-[20%]  ">
             <PiShoppingCartSimpleThin className="text-[60px]  " />
             <h1 className=" text-3xl"> (1) </h1>
           </div>
 
-          <Link href="/cart"
-           className="uppercase border border-slate-300 w-1/2 p-3 text-center 
-          mx-auto transition hover:bg-slate-700 duration-200 cursor-pointer ">Go to Cart</Link>
-
-
-
+          <Link
+            href="/cart"
+            className="uppercase border border-slate-300 w-1/2 p-3 text-center 
+          mx-auto transition hover:bg-slate-700 duration-200 cursor-pointer "
+          >
+            Go to Cart
+          </Link>
         </div>
       </div>
       {/* 2 ye bir kasa ve menu kartalrı bölmelı kısım -SONNNNNN*/}

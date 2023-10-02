@@ -19,7 +19,7 @@ function NavMnenu() {
       <h1 className="text-2xl uppercase font-semibold text-white w-full  text-center px-4 mb-4">
         The echoes kitchen
       </h1>
-      <div className="w-full text-left mx-[6%] mt-10">
+      <div className="w-full text-center mx-auto mt-6">
         <Link
           href="/login"
           className=" p-2 px-6 border border-slate-200 text-slate-200     
