@@ -5,10 +5,11 @@ import Link from "next/link";
 
 function Footer() {
   return (
-    <div className="w-screen h-80  text-stone-200 p-0">
-      <div className="h-64  bg-blackk grid grid-cols-3 gap-x-8 px-16 items-center justify-center">
-        <div>
-          <h1 className="uppercase text-xl font-bold tracking-wide mb-3 text-slate-100">CONTACT US</h1>
+    <div className="w-full h-80  text-stone-200 p-0">
+      <div className="h-64  bg-blackk grid grid-cols-3 gap-x-8 px-16 items-center justify-center 
+      mmd:grid-cols-2">
+        <div className="text-left">
+          <h1 className="uppercase text-xl  font-bold tracking-wide mb-3 text-slate-100 pl-1">CONTACT US</h1>
           <div className="mb-2 text-stone-300">
             <div className="flex mb-2 items-center">
               <MdLocationOn className="text-xl mr-2  " />
@@ -27,10 +28,10 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div >
+        <div className="mmd:text-left sm:text-right" >
         <h1 className="uppercase text-xl font-bold tracking-wide mb-3 text-slate-100">CHECK OUT </h1>
 
-        <ul className="list-disc pl-5  ">
+        <ul className="list-disc pl-5 mmd:list-none  ">
           <li className="px-2 tracking-wide  ">
             <Link href="/">Home</Link>
           </li>

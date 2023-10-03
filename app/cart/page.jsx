@@ -9,8 +9,9 @@ function CartPage() {
     <div className="bg-blackk">
       <NavMnenu />
 
-      <div className="w-full flex justify-center items-center my-8 px-4 py-16 text-slate-300 border-y border-slate-300">
-        <div className=" w-[1024px] my-12 h-auto  flex items-center justify-center ">
+      <div className="w-full flex justify-center items-center my-8 px-4 py-16 text-slate-300
+       border-y border-slate-300 ">
+        <div className=" w-[1024px] my-12 h-auto  flex items-center justify-center mmd:flex-col ">
           <div className="flex-2 w-full flex flex-col ">
             <div className="w-full flex justify-evenly items-center mb-4">
               <Image

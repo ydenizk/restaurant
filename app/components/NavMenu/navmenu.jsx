@@ -7,7 +7,8 @@ function NavMnenu() {
 <div className="flex  gap-0 h-80   ">
     <div
       className='bg-blackk flex-1 relative after:content-[""] after:absolute  
-          after:w-12  after:h-80  after:bg-blackk after:z-10 after:top-0 after:right-0 after:-skew-x-6 after:origin-bottom-right '
+          after:w-12  after:h-80  after:bg-blackk after:z-10 after:top-0 after:right-0 after:-skew-x-6 
+          after:origin-bottom-right xs:hidden '
     >
       <Image
         src="/log.png"
@@ -16,10 +17,10 @@ function NavMnenu() {
         alt="logo"
         className="rounded-full opacity-90 mx-auto my-8 mb-4 "
       />
-      <h1 className="text-2xl uppercase font-semibold text-white w-full  text-center px-4 mb-4">
+      <h1 className="text-2xl uppercase font-semibold text-white w-full  text-center px-4 mb-4 sm:text-xl">
         The echoes kitchen
       </h1>
-      <div className="w-full text-center mx-auto mt-6">
+      <div className="w-full text-center mx-auto mt-6 mmd:mt-4">
         <Link
           href="/login"
           className=" p-2 px-6 border border-slate-200 text-slate-200     

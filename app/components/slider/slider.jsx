@@ -20,7 +20,7 @@ function Slider() {
   };
 
   return (
-    <div className="flex flex-col justify-center  items-center my-12  max-w-screen-lg ">
+    <div className="flex flex-col justify-center  items-center my-12  max-w-screen-lg mmd:hidden">
       <h1 className="text-orange-900 text-2xl font-semibold uppercase tracking-wide mb-8 ">
         / Reviews /
       </h1>

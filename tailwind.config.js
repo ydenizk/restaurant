@@ -14,6 +14,7 @@ module.exports = {
       },
       backgroundImage:{
         'banner': 'url("/banner.jpg")',
+        'resbanner': 'url("/banner-res.jpg")',
         'reservv': 'url("/reserv-1.jpg")',
         'menu-banner': 'url("/menu-banner.jpg")',
        
@@ -23,24 +24,22 @@ module.exports = {
         blackk:"rgb(26,26,33)"
       
       }
-      
      
     },
     screens: {
-      'sm': {'min': '640px', 'max': '767px'},
-      // => @media (min-width: 640px and max-width: 767px) { ... }
 
-      'md': {'min': '768px', 'max': '1023px'},
-      // => @media (min-width: 768px and max-width: 1023px) { ... }
-
-      'lg': {'min': '1024px', 'max': '1279px'},
+      'lg': {'max': '1024px', },
       // => @media (min-width: 1024px and max-width: 1279px) { ... }
 
-      'xl': {'min': '1280px', 'max': '1535px'},
-      // => @media (min-width: 1280px and max-width: 1535px) { ... }
+      'mmd': { 'max': '860px'},
+      // => @media (min-width: 768px and max-width: 1023px) { ... }
+      'sm': { 'max': '640px'},
+      // => @media (min-width: 640px and max-width: 767px) { ... }
 
-      '2xl': {'min': '1536px'},
-      // => @media (min-width: 1536px) { ... }
+      'xs': { 'max': '480px'},
+      
+
+   
     },
   },
   plugins: [],

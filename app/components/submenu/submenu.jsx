@@ -9,14 +9,14 @@ function SubMenu() {
     <div className="relative w-screen">
       {/* MENU ADLARI */}
       <div className=" w-full h-12 flex bg-blackk ">
-        <div className="bg-blackk h-full w-[60%]  flex items-center  justify-between px-8">
+        <div className="bg-blackk h-full w-[60%]  flex items-center  justify-between px-8 mmd:w-[80%] sm:w-[100%]">
           {food.map((f) => {
             return (
               <>
                 <button
                   key={f.id}
                   className="border-0 text-slate-200 transition hover:text-slate-400 tracking-wide 
-                   capitalize font-light  "
+                   capitalize font-light xs:text-sm  xs:font-semibold "
                 >
                   {f.tit}
                 </button>
@@ -40,7 +40,7 @@ function SubMenu() {
                 >
                   {tit}
                 </h2>
-                <div className="gap-x-6 gap-y-4  grid grid-cols-2 text-slate-300  font-extralight">
+                <div className="gap-x-6 gap-y-4  grid grid-cols-2 text-slate-300  font-extralight mmd:grid-cols-1">
                   {details.map((dt) => {
                     const { id, title, desc, img, price, options } = dt;
                     return (
@@ -65,7 +65,7 @@ function SubMenu() {
                           </div>
 
                           <div className="flex flex-1 w-full  justify-end items-center ">
-                            <h3> {price} € </h3>
+                            <h3 className="xs:text-sm"> {price} € </h3>
                             <Link
                               href={`/menu/${id}`}
                               className="ml-4 w-4 h-4 text-blackk bg-slate-400 transition hover:bg-slate-300 opacity-80 text-center leading-4 rounded-sm"
@@ -83,16 +83,16 @@ function SubMenu() {
           })}
         </div>
 
-        <div className="  flex-1  bg-blackk text-center h-screen sticky right-0 top-0 ">
-          <div className="flex items-center mt-[30%] justify-center mb-[20%]  ">
-            <PiShoppingCartSimpleThin className="text-[60px]  " />
-            <h1 className=" text-3xl"> (1) </h1>
+        <div className="  flex-1  bg-blackk text-center h-screen sticky right-0 top-0 sm:border-t ">
+          <div className="flex items-center mt-[30%] justify-center mb-[20%] xs:mb-[40%] xs:mt-[40%] ">
+            <PiShoppingCartSimpleThin className="text-[60px]  sm:text-[40px] " />
+            <h1 className=" text-3xl sm:text-xl"> (1) </h1>
           </div>
 
           <Link
             href="/cart"
             className="uppercase border border-slate-300 w-1/2 p-3 text-center 
-          mx-auto transition hover:bg-slate-700 duration-200 cursor-pointer "
+          mx-auto transition hover:bg-slate-700 duration-200 cursor-pointer sm:p-2 sm:text-sm  xs:text-xs"
           >
             Go to Cart
           </Link>

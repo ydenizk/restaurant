@@ -26,31 +26,32 @@ export default function TitleId({ params }) {
 
   return (
     <div className=" bg-[#F0F0F0] pb-24 ">
-      <div className="max-w-screen-lg px-[10%] pt-12 ">
+      <div className="max-w-screen-lg px-[10%] pt-12 mmd:text-center">
         <Link
           href="/menu"
           className="     text-xl font-semibold bg-blackk hover:bg-slate-800 text-slate-200
-        p-4 transition duration-300  uppercase tracking-wide"
+        p-4 transition duration-300  uppercase tracking-wide "
         >
           Back to menu
         </Link>
       </div>
 
-      <div className="w-full px-[10%] mt-12  max-w-screen-lg flex justify-center items-center gap-[5%]">
-        <div className="flex-2 w-full ">
+      <div className="w-full  px-[10%] mt-12  max-w-screen-lg flex  justify-center items-center gap-[3%] mmd:flex-col mmd:gap-0">
+        <div className="flex-2 w-full h-full border-2 border-blackk p-10 max-w-[540px] bg-blackk ">
           <Image
             src={selectedItem.img}
-            width={640}
-            height={365}
+            width={540}
+            height={309}
             alt=""
+        
             loading="lazy"
-            className="object-cover rounded-md"
+            className="object-contain rounded-md mmd:mx-auto  "
           />
         </div>
 
         <div
-          className="flex-1 h-auto p-6 px-8  mx-auto   w-auto border-2  bg-blackk rounded-md
-          text-slate-300"
+          className="flex-1 h-auto p-6  mx-auto      bg-blackk rounded-md  mmd:rounded-none 
+          text-slate-300 mmd:max-w-[540px] "
         >
           <h1 className="tracking-wide  font-semibold py-2 text-2xl">
             {selectedItem.title}

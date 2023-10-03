@@ -9,7 +9,7 @@ function Loginpage() {
     <main >
       <NavMnenu />
       <div className="flex justify-center items-center text-slate-200 py-16 bg-[#F0F0F0] border-y border-slate-300" >
-        <div className="p-10 flex flex-col gap-8  bg-blackk my-16 ">
+        <div className="p-10 flex flex-col gap-8  bg-blackk my-16 mmd:my-4 ">
           <h1 className="font-bold text-xl xl:text-3xl">Welcome</h1>
           <p>Log into your account or create a new one using social buttons</p>
           <button className="flex gap-4 p-4 ring-1 ring-orange-100 rounded-md">

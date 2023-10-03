@@ -6,16 +6,17 @@ import Image from "next/image";
 
 function Open() {
   return (
-    <div className="w-full max-w-screen-lg grid grid-cols-2  justify-center items-center gap-10 max-w-screen-lg p-4 mb-20  ">
-      <div className=" border-8 border-gray-800 p-8">
-        <h1 className="uppercase text-3xl font-bold mb-8">
+    <div className="w-screen max-w-screen-lg grid grid-cols-2  justify-center items-center gap-10 
+    max-w-screen-lg p-4 mb-20  mmd:gap-2 mx-auto sm:grid-cols-1 ">
+      <div className=" border-8 border-gray-800 p-8 mmd:p-4 mmd:border-4">
+        <h1 className="uppercase text-3xl font-bold mb-8 whitespace-nowrap mmd:text-2xl">
           The echoes kitchen
         </h1>
         <div className="mb-6">
           <div className="flex mb-4 items-center">
             <MdLocationOn className="text-3xl mr-4" />
-            <p className="font-light tracking-wide">
-              Josephspitalstraße 4 80331 München
+            <p className="font-light tracking-wide  mmd:text-sm">
+              Josephspitalstraße 4 80331 München 
             </p>
           </div>
 
@@ -37,7 +38,7 @@ function Open() {
             </p>
           </div>
         </div>
-        <div className="flex justify-around items-center mb-8">
+        <div className="flex justify-around items-center mb-8 ">
           <Link href="https://instagram.com/" className="ml-2 px-2">
             <FaInstagramSquare className=" text-3xl " />
           </Link>
@@ -51,8 +52,8 @@ function Open() {
         <h1 className="font-light">We are looking forward to you!</h1>
       </div>
 
-      <div className="border-8 border-gray-800 p-8">
-        <h1 className="w-full mx-auto text-3xl  text-center uppercase font-bold mb-8">
+      <div className="border-8 border-gray-800 p-8 mmd:p-4 mmd:border-4">
+        <h1 className="w-full mx-auto text-3xl  text-center uppercase font-bold mb-8 mmd:text-2xl">
           Open hours
         </h1>
         <div className="flex  justify-between text-center mb-4 w-full">
@@ -83,11 +84,11 @@ function Open() {
           <h3 className="font-light text-left -pl-4">Sonntag</h3>
           <p className="font-light w-full text-right  ">Closed</p>
         </div>
-        <h1 className="font-light w-full text-center">  ** Kitchen closes at 21:00 </h1>
+        <h1 className="font-light w-full text-center">
+          {" "}
+          ** Kitchen closes at 21:00{" "}
+        </h1>
       </div>
-      
-
- 
     </div>
   );
 }
