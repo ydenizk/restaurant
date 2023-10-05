@@ -2,7 +2,7 @@
 import Footer from "@/app/components/footer/footer";
 import NavMnenu from "@/app/components/NavMenu/navmenu";
 
-export default function MenuLayout({ children }) {
+export default function ProductLayout({ children }) {
   return (
     <html lang="en">
       <body>

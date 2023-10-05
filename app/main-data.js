@@ -1,26 +1,4 @@
-/* export const menu = [
-  {
-    id: 1,
-    title: "Burgers",
-  },
-  {
-    id: 2,
-    title: "French Fries",
-  },
-  {
-    id: 3,
-    title: "Salads",
-  },
-  {
-    id: 4,
-    title: "Menus",
-  },
-  {
-    id: 4,
-    title: "Beveragea",
-  },
-];
- */
+
 export const food = [
   {
     tit: "burgers",
@@ -333,7 +311,7 @@ export const single={
   title: "Cheeseburger",
   desc: "Irish Angus Beef, Matured Cheddar, Tomato Tartare, Pickle, Lettuce, Secret Sauce",
   img: "/menu-pics/ham-1.png",
-  price: 12.40,
+  dprice: 12.40,
   options: [
     {
       title: "Medium",

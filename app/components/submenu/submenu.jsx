@@ -1,26 +1,39 @@
 import React from "react";
-import { food } from "@/app/main-data";
+//import { food } from "@/app/main-data";
 import Image from "next/image";
-import { PiShoppingCartSimpleThin } from "react-icons/pi";
-import Link from "next/link";
 
-function SubMenu() {
+import Link from "next/link";
+import { PiShoppingCartSimpleThin } from "react-icons/pi";
+const getData = async () => {
+  const res = await fetch("http://localhost:3000/api/category", {
+    cache: "no-store",
+  });
+
+  if(!res.ok) {
+    throw new Error("category data fetch failed...");
+  }
+  return res.json();
+};
+
+async function SubMenu() {
+  const catData =await getData();
+
   return (
     <div className="relative w-screen">
       {/* MENU ADLARI */}
       <div className=" w-full h-12 flex bg-blackk ">
         <div className="bg-blackk h-full w-[60%]  flex items-center  justify-between px-8 mmd:w-[80%] sm:w-[100%]">
-          {food.map((f) => {
+          {catData.map((cat) => {
             return (
-              <>
+              <div key={cat.id}>
                 <button
-                  key={f.id}
+           
                   className="border-0 text-slate-200 transition hover:text-slate-400 tracking-wide 
                    capitalize font-light xs:text-sm  xs:font-semibold "
                 >
-                  {f.tit}
+                  {cat.tit}
                 </button>
-              </>
+              </div>
             );
           })}
         </div>

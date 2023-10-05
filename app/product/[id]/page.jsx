@@ -1,32 +1,18 @@
 import React from "react";
 import Image from "next/image";
 import { food } from "@/app/main-data.js";
-import { notFound } from "next/navigation";
+
 import Price from "@/app/components/price/price";
 import Link from "next/link";
 
-export const generateStaticParams = async () => {
-  const paths = food.flatMap((category) =>
-    category.details.map((item) => ({
-      id: item.id.toString(),
-    }))
-  );
 
-  return paths;
-};
 
-export default function TitleId({ params }) {
-  const id = params.id;
-  const selectedItem = food
-    .flatMap((category) => category.details)
-    .find((item) => item.id.toString() === id);
-  if (!selectedItem) {
-    notFound();
-  }
+export default function TitleId() {
+
 
   return (
     <div className=" bg-[#F0F0F0] pb-24 ">
-      <div className="max-w-screen-lg px-[10%] pt-12 mmd:text-center">
+      {/* <div className="max-w-screen-lg px-[10%] pt-12 mmd:text-center">
         <Link
           href="/menu"
           className="     text-xl font-semibold bg-blackk hover:bg-slate-800 text-slate-200
@@ -67,7 +53,8 @@ export default function TitleId({ params }) {
             * You can order max.5 due to logistics issues
           </p>
         </div>
-      </div>
+      </div> */}
+      <h1>xx</h1>
     </div>
   );
 }
