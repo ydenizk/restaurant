@@ -1,10 +1,30 @@
+
+"use client"
+
 import React from "react";
 import NavMnenu from "../components/NavMenu/navmenu";
 import Footer from "../components/footer/footer";
 import Image from "next/image";
 import Link from "next/link";
+import {useSession,signIn} from "next-auth/react"
+import { useRouter } from "next/navigation"
+
+
 
 function Loginpage() {
+
+  const {status}=useSession()
+  const router=useRouter()
+
+if(status==="loading"){
+  return <p className="mx-auto uppercase w-full text-center text-2xl font-bold my-16 text-blackk">Loading.....</p>
+}
+if(status==="authenticated"){
+router.push("/")
+}
+
+
+
   return (
     <main >
       <NavMnenu />
@@ -12,7 +32,7 @@ function Loginpage() {
         <div className="p-10 flex flex-col gap-8  bg-blackk my-16 mmd:my-4 ">
           <h1 className="font-bold text-xl xl:text-3xl">Welcome</h1>
           <p>Log into your account or create a new one using social buttons</p>
-          <button className="flex gap-4 p-4 ring-1 ring-orange-100 rounded-md">
+          <button className="flex gap-4 p-4 ring-1 ring-orange-100 rounded-md" onClick={()=>signIn("google")}>
             <Image
               src="/google.png"
               alt=""

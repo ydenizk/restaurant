@@ -3,8 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { ImTwitter, ImFacebook } from "react-icons/im";
 import { FaInstagramSquare } from "react-icons/fa";
+import NavInOut from "../navInOut/navInOut";
 
 function Logo() {
+
+
+
+
+
+
   return (
     <div className="w-full h-full p-4 flex flex-col justify-between items-center  mmd:p-2  mmd:justify-center  ">
       <Image
@@ -25,22 +32,10 @@ function Logo() {
           <FaInstagramSquare className="text-slate-100 transition hover:text-slate-300  text-2xl " />
         </Link>
       </div>
-      <div className=" w-full flex flex-col items-center  my-8 mmd:my-4 mmd:flex-row  mmd:justify-evenly ">
-        <Link
-          href="/menu"
-          className=" whitespace-nowrap py-3 border-2 border-slate-200 text-slate-100 text-center w-36 
-          mx-auto mb-4 hover:bg-orange-900 transition mmd:w-32 mmd:p-2  mmd:m-0 "
-        >
-          Order Online
-        </Link>
-        <Link
-          href="/login"
-          className=" py-3 border-2 border-slate-200 text-slate-100 text-center w-36 mx-auto 
-           hover: hover:bg-orange-900  transition  mmd:w-32 mmd:p-2 mmd:m-0 "
-        >
-          Login
-        </Link>
-      </div>
+   
+    
+    <NavInOut />
+   
     </div>
   );
 }

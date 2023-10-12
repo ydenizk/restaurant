@@ -22,12 +22,7 @@ function Navbar() {
       <li className='px-2 tracking-wide'>
         <Link href="/contact" className='hover:text-slate-300 transition'>Contact</Link>
       </li>
-      <li className='sm:hidden'>
-        <Link href="/" className='pl-8 font-normal text-slate-300 '>EN</Link>
-      </li>
-      <li className='sm:hidden'>
-        <Link href="/tur" className='px-2 font-normal'>TUR</Link>
-      </li>
+  
      </ul>
 
     </nav>

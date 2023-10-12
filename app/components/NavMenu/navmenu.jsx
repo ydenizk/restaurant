@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from "next/image";
 import Link from "next/link";
+import NavInOut from '../navInOut/navInOut';
 
 function NavMnenu() {
   return (
@@ -20,15 +21,13 @@ function NavMnenu() {
       <h1 className="text-2xl uppercase font-semibold text-white w-full  text-center px-4 mb-4 sm:text-xl">
         The echoes kitchen
       </h1>
-      <div className="w-full text-center mx-auto mt-6 mmd:mt-4">
-        <Link
-          href="/login"
-          className=" p-2 px-6 border border-slate-200 text-slate-200     
-       hover:bg-slate-800 transition tracking-wide   "
-        >
-          Login
-        </Link>
-      </div>
+    
+
+
+<NavInOut />
+
+
+
     </div>
 
     <div className=" bg-menu-banner  flex-1  bg-cover relative text-right p-8 ">
