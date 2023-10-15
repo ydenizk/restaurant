@@ -26,6 +26,7 @@ addToCart(item) {
     (product) => product.id === item.id
   );
 
+  
   if (productInState) {
     const updatedProducts = products.map((product) =>
       product.id === productInState.id

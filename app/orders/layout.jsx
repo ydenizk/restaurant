@@ -1,5 +1,4 @@
 
-import Footer from "@/app/components/footer/footer";
 import NavMnenu from "@/app/components/NavMenu/navmenu";
 
 export default function ProductLayout({ children }) {
@@ -8,7 +7,7 @@ export default function ProductLayout({ children }) {
       <body>
 <NavMnenu />
         {children}
-      <Footer />
+
       </body>
     </html>
   );

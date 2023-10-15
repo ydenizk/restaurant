@@ -1,8 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import Cartbox from "@/app/components/cartbox/cartbox";
+import CartboxSm from "./../../components/cartboxSm/cartboxSm";
 import Price from "@/app/components/price/price";
 import Link from "next/link";
+import Footer from "@/app/components/footer/footer";
 
 const getData = async (id) => {
   const res = await fetch(`http://localhost:3000/api/products/${id}`, {
@@ -20,8 +21,7 @@ export default async function TitleId({ params }) {
   const singleProduct = await getData(params.id);
 
   return (
-    <div className=" bg-[#F0F0F0] pb-24 ">
-      
+    <div className=" bg-[#F0F0F0]  ">
       <div className="max-w-screen-lg px-[10%] flex justify-between items-center pt-12 mmd:text-center ">
         <Link
           href="/menu"
@@ -30,11 +30,11 @@ export default async function TitleId({ params }) {
         >
           Back to menu
         </Link>
+        <CartboxSm />
       </div>
-      <Cartbox />
 
       <div className="w-full  px-[10%] mt-12  max-w-screen-lg flex  justify-center items-center gap-[3%] mmd:flex-col mmd:gap-0">
-        <div className="flex-1 w-full h-full border-2 border-blackk p-10 max-w-[540px] bg-blackk ">
+        <div className="flex-1 w-full h-full border-2 border-blackk p-10 max-w-[540px] bg-blackk  ">
           <Image
             src={singleProduct.img}
             width={540}
@@ -46,8 +46,8 @@ export default async function TitleId({ params }) {
         </div>
 
         <div
-          className="flex-1 h-auto p-6  mx-auto      bg-blackk rounded-md  mmd:rounded-none 
-          text-slate-300 mmd:max-w-[540px] "
+          className="flex-1 h-auto p-6  mx-auto   bg-blackk rounded-md  mmd:rounded-none 
+          text-slate-300 mmd:w-full mmd:max-w-[540px]"
         >
           <h1 className="tracking-wide  font-semibold py-2 text-2xl">
             {singleProduct.title}
@@ -60,7 +60,7 @@ export default async function TitleId({ params }) {
           </p>
         </div>
       </div>
-
+      <Footer />
     </div>
   );
 }

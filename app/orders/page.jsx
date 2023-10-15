@@ -2,7 +2,7 @@
 "use client";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-
+import Footer from "../components/footer/footer";
 import React from "react";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 
@@ -34,7 +34,7 @@ function OrdersPage() {
     },
   });
 
-  const handleSubmit = (e,id) => {
+  const handleSubmit = (e, id) => {
     e.preventDefault();
     const form = e.target;
     const input = form.elements[0];
@@ -43,10 +43,11 @@ function OrdersPage() {
     mutation.mutate({ id, status });
   };
 
-  if (isLoading || status === "loading") return "Loading...";
+  if (isLoading || status === "loading") return <div className="w-full mx-auto mt-12 text-2xl uppercase text-center">Loading....</div>;
   if (error) return "An error has occurred: " + error.message;
 
   return (
+    <div>
     <div className="w-full justify-center items-center py-36 border-y border-slate-400 bg-blackk ">
       <table className="w-full max-w-5xl mx-auto  text-slate-200 ">
         <tr className="text-left border-b border-slate-200 m-4">
@@ -66,35 +67,33 @@ function OrdersPage() {
               <td>{dt.products[0].title} </td>
               {session.user.isAdmin ? (
                 <td>
-                
                   <form
                     action=""
-                    className="flex justify-around items-center my-4"
+                    className="flex justify-around items-center my-4 mmd:hidden"
                     onSubmit={(e) => handleSubmit(e, dt.id)}
                   >
-                    <p className="capitalize">  {dt.status}  </p>
-                   <div>
-
-              
-                    <input
-                      placeholder={dt.status}
-                      className="items-center  ring-1  rounded
+                    <p className="capitalize text-left "> {dt.status} </p>
+                    <div className=""> 
+                      <input
+                        placeholder={dt.status}
+                        className="items-center  ring-1  rounded
                ring-amber-800 text-slate-700 p-1 capitalize border-none"
-                    />
-                    <button className="p-1 bg-amber-900 rounded ml-2 tracking-wide  text-sm cursor-pointer ">
-                      Edit
-                    </button>
+                      />
+                      <button className="p-1 bg-amber-900 rounded ml-2 tracking-wide  text-sm cursor-pointer ">
+                        Edit
+                      </button>
                     </div>
                   </form>
-                  
                 </td>
               ) : (
-                <td className="capitalize  text-blackk"> {dt.status} </td>
+                <td className="capitalize   text-blackk"> {dt.status} </td>
               )}
             </tr>
           );
         })}
       </table>
+    </div>
+    <Footer />
     </div>
   );
 }
