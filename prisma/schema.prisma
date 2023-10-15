@@ -49,7 +49,7 @@ model User {
   isAdmin       Boolean @default(false)   //sadece bu kısmı biz ekledik
   accounts      Account[]
   sessions      Session[]
-  //Order         Order[]
+  Order         Order[]
 }
 
 model VerificationToken {
@@ -90,7 +90,13 @@ model Order {
   price     Decimal
   products  Json[]
   status    String
- // intent_id String?  @unique
- //user      User     @relation(fields: [userEmail], references: [email])
- //userEmail String 
+  intent_id String?  @unique
+ user      User     @relation(fields: [userEmail], references: [email])
+ userEmail String 
 }
+
+
+
+
+
+

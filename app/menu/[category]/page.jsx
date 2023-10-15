@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Cartbox from "@/app/components/cartbox/cartbox";
 
-
 const getData = async (category) => {
   const res = await fetch(
     `http://localhost:3000/api/products?cat=${category}`,
@@ -57,8 +56,7 @@ async function CategoryPage({ params }) {
                   <div className="flex flex-1 w-full  justify-end items-center ">
                     <h3 className="xs:text-sm"> {product.price} € </h3>
                     <Link
-                      //href={`/menu/${id}`}
-                      href=""
+                      href={`/product/${product.id}`}
                       className="ml-4 w-4 h-4 text-blackk bg-slate-400 transition hover:bg-slate-300 opacity-80 text-center leading-4 rounded-sm"
                     >
                       +
@@ -70,11 +68,14 @@ async function CategoryPage({ params }) {
           })}
         </div>
         <div className="w-full text-center">
-        <Link href="/menu" className="bg-blackk w-48 p-3 ml-4 rounded-md my-8  transition hover:bg-slate-700  capitalize font-bold text-xl
-                text-center mx-auto text-slate-200 tracking-wider whitespace-nowrap">
-                    back to menu
-                </Link>
-                </div>
+          <Link
+            href="/menu"
+            className="bg-blackk w-48 p-3 ml-4 rounded-md my-8  transition hover:bg-slate-700  capitalize font-bold text-xl
+                text-center mx-auto text-slate-200 tracking-wider whitespace-nowrap"
+          >
+            back to menu
+          </Link>
+        </div>
       </div>
 
       <Cartbox />

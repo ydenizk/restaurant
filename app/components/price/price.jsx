@@ -1,48 +1,57 @@
 "use client";
 
+import { useCartStore } from "@/app/utils/store";
 import React, { useEffect, useState } from "react";
 
-function Price({ options, price, id }) {
-  const [total, setTotal] = useState(price);
+function Price({ product }) {
+  const [total, setTotal] = useState(product.price);
   const [qty, setQty] = useState(1);
   const [selected, setSelected] = useState(0);
 
+  const { addToCart } = useCartStore();
+
+//bu useeffect i hydration için yani sayfa yenılemede cart daj-kı sayılar aynı kalsın  
+//istediğimiz için ,error verdiğiği için onu engellemek için yapuoruyz
+  useEffect(()=>{
+    useCartStore.persist.rehydrate()
+  },[])
+
   useEffect(() => {
-    setTotal(
-      qty * (options ? price + options[selected].additionalPrice : price)
-    );
-  }, [qty, selected, options, price]);
+    if (product.options?.length) {
+      setTotal(
+        qty * product.price + qty * product.options[selected].additionalPrice
+      );
+    }
+    console.log(total);
+  }, [qty, selected, product]);
 
   return (
     <div className="mb-1">
-      <h1 className="tracking-wide  font-semibold py-2 text-2xl">
-        ${total.toFixed(2)} €
-      </h1>
+      <h1 className="tracking-wide  font-semibold py-2 text-2xl">{total} €</h1>
 
       <div className="w-full flex items-center justify-start my-2 mb-6">
-        {options.map((opt, index) => {
-          return (
-            <button
-              key={opt.title}
-              className="w-28 p-2 tracking-wide text-xl  mr-4 border border-slate-200 "
-              style={{
-                background:
-                  selected === index ? "rgb(226 232 240)" : "rgb(26,26,33)",
-                color:
-                  selected === index ? "rgb(26,26,33)" : "rgb(226 232 240)",
-              }}
-              onClick={() => setSelected(index)}
-            >
-              {opt.title}
-            </button>
-          );
-        })}
+        {product.options?.length &&
+          product.options.map((opt, index) => {
+            return (
+              <button
+                key={opt.title}
+                className="w-28 p-2 tracking-wide text-xl capitalize  mr-4 border border-slate-200 "
+                style={{
+                  background:
+                    selected === index ? "rgb(226 232 240)" : "rgb(26,26,33)",
+                  color:
+                    selected === index ? "rgb(26,26,33)" : "rgb(226 232 240)",
+                }}
+                onClick={() => setSelected(index)}
+              >
+                {opt.title}
+              </button>
+            );
+          })}
       </div>
 
       {/* Chart part.. */}
-     
 
-   
       <div className="flex w-full  mb-4">
         {/* ......... */}
         <button
@@ -62,14 +71,25 @@ function Price({ options, price, id }) {
         >
           +
         </button>
-        <button className=" text-center   px-3 tracking-wide text-lg  cursor-pointer text-blackk   border border-slate-200 bg-slate-400 hover:bg-slate-500 transiti ">ADD</button>
-        </div>
-        
-      
-
-
-
-    
+        <button
+          className=" text-center   px-3 tracking-wide text-lg  cursor-pointer text-blackk  
+         border border-slate-200 bg-slate-400 hover:bg-slate-500 transiti "
+          onClick={() =>
+            addToCart({
+              id: product.id,
+              title: product.title,
+              img: product.img,
+              price: total,
+              ...(product.options?.length && {
+                optionTitle: product.options[selected].title,
+              }),
+              quantity: qty,
+            })
+          }
+        >
+          ADD
+        </button>
+      </div>
     </div>
   );
 }
