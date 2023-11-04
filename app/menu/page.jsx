@@ -7,10 +7,15 @@ const getData = async () => {
     cache: "no-store",
   });
 
-  if (!res.ok) {
+/*   if (!res.ok) {
     throw new Error("category data fetch failed...");
   }
-  return res.json();
+  return res.json(); */
+
+  if (res.ok) {
+    const catData = await res.json();
+    return catData;
+  }
 };
 
 async function MenuPage() {
@@ -24,7 +29,7 @@ async function MenuPage() {
         object-contain"
       >
         <div className=" w-full  flex flex-col items-left   gap-6 pl-8">
-          {catData.map((cat) => {
+          {catData?.map((cat) => {
             return (
               <Link
                 href={`/menu/${cat.tit}`}

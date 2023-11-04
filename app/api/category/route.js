@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import {prisma} from "./../../utils/connect"
+import { prisma } from "@/app/utils/connect";
 
 //const prisma = new PrismaClient()
 //Category fetch
