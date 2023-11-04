@@ -3,10 +3,9 @@ import Image from "next/image";
 import CartboxSm from "./../../components/cartboxSm/cartboxSm";
 import Price from "@/app/components/price/price";
 import Link from "next/link";
-import Footer from "@/app/components/footer/footer";
 
 const getData = async (id) => {
-  const res = await fetch(`http://localhost:3000/api/products/${id}`, {
+  const res = await fetch(`${process.env.PUBLIC_URL}/api/products/${id}`, {
     cache: "no-store",
   });
 
@@ -33,7 +32,7 @@ export default async function TitleId({ params }) {
         <CartboxSm />
       </div>
 
-      <div className="w-full  px-[10%] mt-12  max-w-screen-lg flex  justify-center items-center gap-[3%] mmd:flex-col mmd:gap-0">
+      <div className="w-full  px-[10%] my-12  max-w-screen-lg flex  justify-center items-center gap-[3%] mmd:flex-col mmd:gap-0">
         <div className="flex-1 w-full h-full border-2 border-blackk p-10 max-w-[540px] bg-blackk  ">
           <Image
             src={singleProduct.img}
@@ -60,7 +59,6 @@ export default async function TitleId({ params }) {
           </p>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

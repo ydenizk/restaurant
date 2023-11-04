@@ -11,13 +11,16 @@ function NavMnenu() {
           after:w-12  after:h-80  after:bg-blackk after:z-10 after:top-0 after:right-0 after:-skew-x-6 
           after:origin-bottom-right xs:hidden '
     >
-      <Image
+      <Link href="/">
+          <Image
         src="/log.png"
         width={150}
         height={150}
         alt="logo"
         className="rounded-full opacity-90 mx-auto my-8 mb-4 "
       />
+      </Link>
+  
       <h1 className="text-2xl uppercase font-semibold text-white w-full  text-center px-4 mb-4 sm:text-xl">
         The echoes kitchen
       </h1>

@@ -54,7 +54,7 @@ router.push("/")
           </button>
           <p className="text-sm">
             Have a problem?
-            <Link className="underline" href="/">
+            <Link className="underline" href="/contact">
          
               Contact us
             </Link>

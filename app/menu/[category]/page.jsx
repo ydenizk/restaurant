@@ -5,8 +5,7 @@ import Link from "next/link";
 import Cartbox from "@/app/components/cartbox/cartbox";
 
 const getData = async (category) => {
-  const res = await fetch(
-    `http://localhost:3000/api/products?cat=${category}`,
+  const res = await fetch(`${process.env.PUBLIC_URL}/api/products?cat=${category}`,
     {
       cache: "no-store",
     }

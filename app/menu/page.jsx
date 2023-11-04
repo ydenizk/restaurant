@@ -3,7 +3,7 @@ import Link from "next/link";
 import Cartbox from "../components/cartbox/cartbox";
 
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/category", {
+  const res = await fetch(`${process.env.PUBLIC_URL}/api/category`,{
     cache: "no-store",
   });
 

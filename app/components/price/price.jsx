@@ -19,7 +19,8 @@ function Price({ product }) {
   useEffect(() => {
     if (product.options?.length) {
       setTotal(
-        qty * product.price + qty * product.options[selected].additionalPrice
+
+        (qty * product.price + qty*product.options[selected].additionalPrice).toFixed(2)
       );
     }
     console.log(total);

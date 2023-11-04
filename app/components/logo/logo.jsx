@@ -14,13 +14,16 @@ function Logo() {
 
   return (
     <div className="w-full h-full p-4 flex flex-col justify-between items-center  mmd:p-2  mmd:justify-center  ">
-      <Image
+      <Link href="/">
+         <Image
         src="/log.png"
         width={200}
         height={200}
         alt="logo"
         className="rounded-full opacity-90 mx-auto my-4 mmd:mx-0  "
       />
+      </Link>
+   
       <div className="w-full flex justify-center itemms-around mmd:hidden ">
         <Link href="https://twitter.com/home" className="ml-2 px-2 ">
           <ImTwitter className="text-slate-100 transition hover:text-slate-300 text-2xl " />
