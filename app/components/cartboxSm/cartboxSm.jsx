@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useCartStore } from "./../../utils/store";
 import { useEffect } from "react";
 
-function cartboxSm() {
+function CartboxSm() {
 
   const {totalItems} = useCartStore()
   ;
@@ -35,4 +35,4 @@ useEffect(()=>{
   );
 }
 
-export default cartboxSm;
+export default CartboxSm;
